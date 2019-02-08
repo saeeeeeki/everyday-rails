@@ -5,7 +5,7 @@ git_source(:github) do |repo_name|
   "https://github.com/#{repo_name}.git"
 end
 
-gem 'rails', '~> 5.1.1'
+gem 'rails', '~> 5.1'
 gem 'pg', '>= 0.18', '< 2.0'
 gem 'puma', '~> 3.7'
 gem 'sass-rails', '~> 5.0'
@@ -16,10 +16,12 @@ gem 'jbuilder', '~> 2.5'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
-  gem 'capybara', '~> 2.13.0'
+  gem 'capybara', '~> 2.13'
+  gem 'launchy', '~> 2.4'
   gem 'selenium-webdriver'
-  gem 'rspec-rails', '~> 3.6.0'
-  gem 'factory_bot_rails', '~>4.10.0'
+  gem 'chromedriver-helper'
+  gem 'rspec-rails', '~> 3.6'
+  gem 'factory_bot_rails', '~>4.10'
 end
 
 group :development do

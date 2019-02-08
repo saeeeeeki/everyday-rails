@@ -1,8 +1,8 @@
 FactoryBot.define do
   factory :project do
     sequence(:name) { |n| "Project #{n}" }
-    description "Sample project for testing purpose"
-    due_on 1.week.from_now
+    description { "Sample project for testing purpose" }
+    due_on { 1.week.from_now }
     association :owner
 
     trait :with_notes do
@@ -10,19 +10,19 @@ FactoryBot.define do
     end
 
     trait :invalid do
-      name nil
+      name { nil }
     end
 
     factory :project_due_yesterday do
-      due_on 1.day.ago
+      due_on { 1.day.ago }
     end
 
     factory :project_due_today do
-      due_on Date.current.in_time_zone
+      due_on { Date.current.in_time_zone }
     end
 
     factory :project_due_tomorrow do
-      due_on 1.day.from_now
+      due_on { 1.day.from_now }
     end
   end
 end
