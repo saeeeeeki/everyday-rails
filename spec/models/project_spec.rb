@@ -27,6 +27,7 @@ RSpec.describe Project, type: :model do
 
     expect(other_project).to be_valid
   end
+  it { is_expected.to validate_uniqueness_of(:name).scoped_to(:user_id) }
 
   describe "late status" do
     it "is late when the due date is past today" do
